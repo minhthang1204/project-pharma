@@ -1,0 +1,79 @@
+GET http://localhost:5000/api/import/unit
+
+###
+POST http://localhost:5000/api/import/user  HTTP/1.1
+content-type: application/json
+
+{
+    
+}
+###
+POST http://localhost:5000/api/users/login  HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTE4OTAzOTRkMzIxOTBmNTk4MjU4NiIsImlhdCI6MTY3NDk4MTM4NiwiZXhwIjoxNjc3NTczMzg2fQ.WapPamUR_URZjC4cXRaAMbp2VXw0lnJpwDS5eYjT70s
+
+{
+    "email": "admin@example.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:5000/api/import/unit HTTP/1.1
+content-type: application/json
+
+{
+    "name": "PMINH"
+}
+
+###
+POST http://localhost:5000/api/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Panaldol",
+    "regisId": "3526102",
+    "category": "63bbc909211e0f53d6c92922",
+    "categoryDrug": "63bd7674cb7f243fd317affd",
+    "unit": "Hộp",
+
+    "packing": "1 Hộp = 10 Vỉ",
+    "APIs": [
+        {
+            "API": "axit",
+            "content": 12
+        },
+        {
+            "API": "canxi",
+            "content": 21
+        }
+    ],
+    "branchName": "thuốc giảm đau",
+    "manufacturer": "Công ty TNHH Panaldol",
+    "countryOfOrigin" : "American",
+    
+    "instruction": "Ăn xong cách 1 tiếng uống, ngày 3 lần",
+    "price": 20000,
+    "allowToSell": true,
+    "prescription": true,
+    "description":  "Thuốc giảm đau nhức",
+    "image": "/upload/2023-02-02T07-49-53.437Zreflect.jpg"
+}
+
+###
+GET http://localhost:5000/api/inventory/tag?keyword=6402cfcadbae6faeb6f16cb8&from=2023-02-01T00:00:00.000Z&to=2023-03-28T00:00:00.000Z
+
+###
+GET http://localhost:5000/api/inventory?oh=OH0&keyword=Salonpas
+
+###
+GET http://localhost:5000/api/inventory?oh=OH0&exp=HSD0
+
+###
+GET http://localhost:5000/api/content
+
+###
+GET http://localhost:5000/api/req-inventory
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTE4OTAzOTRkMzIxOTBmNTk4MjU4NiIsImlhdCI6MTY3OTQ1MTM0MywiZXhwIjoxNjgyMDQzMzQzfQ.liL-O_Mqt8zq2SVUaIu5HsVeNhRYInm-5_r025n_Ca8
+
+###
+GET http://localhost:24221/api/inventory/report/nhapxuat?keyword=659938b6d072db126956fcf0&from=2024-01-01&to=2024-04-30&type=year
